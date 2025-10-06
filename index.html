@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link href="css/stylesheet.css" rel="stylesheet" type="text/css">
+  <script defer src="script/rating_password.js" type="module"></script>
+  <script defer src="script/generate_password.js" type="module"></script>
+  <script defer src="script/clipboard.js"></script>
+  <title>Frontend Mentor | Password generator app</title>
+</head>
+<body>
+  <main>
+    <h1>Password Generator</h1>
+
+    <section class="password-generator-app">
+      <section class="generated-password">
+        <p id="password">P4$5W0rD!</p>
+        <button aria-label="Copy password" id="copy-password">
+          <img src="./assets/images/icon-copy.svg" alt="">
+        </button>
+      </section>
+
+      <section class="password-generator">
+        <div class="character-number">
+          <p>Character Length</p>
+          <span id="password-lenght">10</span>
+        </div>
+
+        <div class="length-selector">
+          <input type="range" id="length-slider" min="4" max="14" value="12">
+        </div>
+
+        <fieldset class="password-options">
+          <input type="checkbox" id="uppercase-checkbox" name="uppercase" checked>
+          <label for="uppercase-checkbox">Include Uppercase Letters</label>
+
+          <input type="checkbox" id="lowercase-checkbox" name="lowercase" checked>
+          <label for="lowercase-checkbox">Include Lowercase Letters</label>
+
+          <input type="checkbox" id="numbers-checkbox" name="numbers">
+          <label for="numbers-checkbox">Include Numbers</label>
+
+          <input type="checkbox" id="symbols-checkbox" name="symbols">
+          <label for="symbols-checkbox">Include Symbols</label>
+        </fieldset>
+
+        <div class="password-strength">
+          <span class="strength">Strength</span>
+          
+          <div class="classement">
+            <span id="password-rate">Medium</span>
+            <div class="rating-bar checked"></div>
+            <div class="rating-bar"></div>
+            <div class="rating-bar"></div>
+            <div class="rating-bar"></div>
+          </div>
+        </div>
+
+        <button type="button" id="generate-button">
+          Generate
+          <img src="assets/images/icon-arrow-right.svg" alt=""> 
+        </button>
+      </section>
+    </section>
+  </main>
+</body>
+</html>
