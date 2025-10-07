@@ -11,12 +11,14 @@ function ratePassword() {
         if (input.checked) passOpts++;
     });
 
-    if (length < 6 || passOpts < 2) {
+    if (length < 4 || passOpts < 2) {
         return {resultStr: "Low", nbBars: 1};
-    } else if (length < 10 || passOpts < 3) {
+    } else if (length < 8 || passOpts < 3) {
         return {resultStr: "Medium", nbBars: 2};
+    } else if (length < 10 || passOpts < 4) {
+        return {resultStr: "High", nbBars: 3};
     } else {
-        return {resultStr: "High", nbBars: 4};
+        return {resultStr: "Strong", nbBars: 4};
     }
 }
 
@@ -24,13 +26,18 @@ function uncheckedAllBar() {
     const bars = document.querySelectorAll('.rating-bar');
     bars.forEach((bar) => {
         bar.classList.remove('checked');
+        bar.classList.remove('strong');
     });
 }
 
 function checkedAllBar(number_rating_bar) {
     const bars = document.querySelectorAll('.rating-bar');
     for (let i = 0; i < number_rating_bar; i++) {
-        bars[i].classList.add('checked');
+        if (number_rating_bar == 4) {
+            bars[i].classList.add('strong');
+        } else {
+            bars[i].classList.add('checked');
+        }
     }
 }
 
